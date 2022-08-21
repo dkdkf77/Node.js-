@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>node 삭제</title>
+</head>
+<body>
+    <h2>node 삭제</h2>
+
+    <div id="list">
+        <p1>php</p1><br>
+        <p1 id="item">css</p1><br>
+        <p1 id="js" style="background-color: yellowgreen; color: #fff;">javascript</p1><br>
+    </div>
+    <button onclick="removeNode()">요소 노드 삭제</button>
+    <button onclick="removeAttr()">속성 노드 삭제</button>
+    <script>
+        'use strict';
+        const removeNode = function(){
+            // 항상 부모 기준으로 먼저 설정을 해줘야 한다 
+            const parent = document.getElementById('list');
+            const removeItem = document.getElementById('item');
+
+            const result = parent.removeChild(removeItem);
+            // 부모요소. removeChild(삭제될요소);
+            console.log(result);
+        }
+
+        const removeAttr = function(){
+           
+            const js = document.getElementById('js');
+
+            js.removeAttribute('style');
+            //요소노드.removeAttribute('삭제될 속성')
+
+        }
+        
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>node 교체</title>
+</head>
+<body>
+    <h2>node 교체</h2>
+
+    <div id="parent">
+        <p id="first">김사과</p>
+        <p>오렌지</p>
+        <p>반하나</p>
+    </div>
+    <p id="second">이메론</p>
+    <hr>
+    <p id="text">제가 좋아하는 과일은 사과입니다</p>
+
+    <button onclick="changeNode()">요소 노드 교체</button>
+    <button onclick="changeText()">텍스트 노드 교제</button>
+
+    <script>
+        'use strict';
+        
+        const changeNode = () => {
+            const parent = document.getElementById('parent');
+            const first = document.getElementById('first');
+            const second = document.getElementById('second');
+
+            parent.replaceChild(second,first);
+            //부모노드.replaceChild(교체해서 입력될 노드, 교체될 대상노드);
+        }
+
+        const changeText = () => {
+            const text = document.getElementById('text').firstChild;
+            text.replaceData(12,2,'메론')
+            //텍스트가 바뀔 노드.replaceData(위치,바뀔 글자수,'바뀔 글자');
+        }
+
+        
+    </script>
+</body>
+</html>
